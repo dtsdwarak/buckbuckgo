@@ -1,0 +1,90 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require font-awesome
+*/
+
+
+/* Font-Face */
+@font-face {
+    font-family: 'Proxima';
+    src: url(/assets/proximanova-regular-webfont.eot?1307578394);
+    src: url('/assets/proximanova-regular-webfont.eot?iefix') format('eot'),url(/assets/proximanova-regular-webfont.woff?1307578394) format('woff'),url(/assets/proximanova-regular-webfont.ttf?1307578394) format('truetype'),url('/assets/proximanova-regular-webfont.svg#webfont2rpW2ohz') format('svg')
+}
+@font-face {
+    font-family: 'Proxima-Italic';
+    font-style: italic;
+    src: url(/assets/proximanova-regitalic-webfont.eot?1307578394);
+    src: url('/assets/proximanova-regitalic-webfont.eot?iefix') format('eot'),url(/assets/proximanova-regitalic-webfont.woff?1307578394) format('woff'),url(/assets/proximanova-regitalic-webfont.ttf?1307578394) format('truetype'),url('/assets/proximanova-regitalic-webfont.svg#webfont2rpW2ohz') format('svg')
+}
+@font-face {
+    font-family: 'Proxima-LightWeight';
+    font-weight: 300;
+    src: url(/assets/proximanova-light-webfont.eot?1307578394);
+    src: url('/assets/proximanova-light-webfont.eot?iefix') format('eot'),url(/assets/proximanova-light-webfont.woff?1307578394) format('woff'),url(/assets/proximanova-light-webfont.ttf?1307578394) format('truetype'),url('/assets/proximanova-light-webfont.svg#webfont2rpW2ohz') format('svg')
+}
+@font-face {
+    font-family: 'Proxima-SemiBold';
+    font-weight: 600;
+    src: url(/assets/proximanova-semibold-webfont.eot?1307578394);
+    src: url('/assets/proximanova-semibold-webfont.eot?iefix') format('eot'),url(/assets/proximanova-semibold-webfont.woff?1307578394) format('woff'),url(/assets/proximanova-semibold-webfont.ttf?1307578394) format('truetype'),url('/assets/proximanova-semibold-webfont.svg#webfont2rpW2ohz') format('svg')
+}
+@font-face {
+    font-family: 'Proxima-SemiBoldItalic';
+    font-weight: 600;
+    font-style: italic;
+    src: url(/assets/proximanova-semibolditalic-webfont.eot?1307578394);
+    src: url('/assets/proximanova-semibolditalic-webfont.eot?iefix') format('eot'),url(/assets/proximanova-semibolditalic-webfont.woff?1307578394) format('woff'),url(/assets/proximanova-semibolditalic-webfont.ttf?1307578394) format('truetype'),url('/assets/proximanova-semibolditalic-webfont.svg#webfont2rpW2ohz') format('svg')
+}
+@font-face {
+    font-family: 'Proxima-Bold';
+    font-weight: bold;
+    src: url(/assets/proximanova-bold-webfont.eot?1307578394);
+    src: url('/assets/proximanova-bold-webfont.eot?iefix') format('eot'),url(/assets/proximanova-bold-webfont.woff?1307578394) format('woff'),url(/assets/proximanova-bold-webfont.ttf?1307578394) format('truetype'),url('/assets/proximanova-bold-webfont.svg#webfont2rpW2ohz') format('svg')
+}
+@font-face {
+    font-family: 'Proxima-BoldItalic';
+    font-weight: bold;
+    font-style: italic;
+    src: url(/assets/proximanova-boldit-webfont.eot?1307578394);
+    src: url('/assets/proximanova-boldit-webfont.eot?iefix') format('eot'),url(/assets/proximanova-boldit-webfont.woff?1307578394) format('woff'),url(/assets/proximanova-boldit-webfont.ttf?1307578394) format('truetype'),url('/assets/proximanova-boldit-webfont.svg#webfont2rpW2ohz') format('svg')
+}
+@font-face {
+    font-family: 'Proxima-ExtraBold';
+    font-weight: 900;
+    src: url(/assets/proximanova-extrabold-webfont.eot?1307578394);
+    src: url('/assets/proximanova-extrabold-webfont.eot?iefix') format('eot'),url(/assets/proximanova-extrabold-webfont.woff?1307578394) format('woff'),url(/assets/proximanova-extrabold-webfont.ttf?1307578394) format('truetype'),url('/assets/proximanova-extrabold-webfont.svg#webfont2rpW2ohz') format('svg')
+}
+
+html, body {
+    font-family: "Proxima";
+    background-color: #f7f7f7;
+    line-height: 1.6;
+    height: 100%;
+}
+
+body,input,select,textarea {
+    color: #333;
+}
+
+.header-bar {
+    border-top: 2px solid #de5833;
+    padding-top: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 5;
+}
