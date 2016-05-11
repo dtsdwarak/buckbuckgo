@@ -1,3 +1,7 @@
+.home-content {
+    text-align: center;
+}
+
 .search-wrapper {
     margin: 0 auto;
     width: 100%;
@@ -7,10 +11,8 @@
 
 .search-box {
     font-size: 1em;
-    /*padding: 0 50%;*/
     float: left;
     text-align: left;
-    width: 92.6%;
     text-indent: 1em;
 
     -moz-box-sizing: border-box;
@@ -31,7 +33,6 @@
 }
 
 .search-icon-container {
-    width: 7%;
     float: right;
     height: 3em;
     display: inline-block;
@@ -61,13 +62,6 @@
     cursor: pointer;
 }
 
-.home-content {
-    width: 50%;
-    height: 30%;
-    margin: 0 auto;
-    text-align: center;
-}
-
 #page-heading {
     letter-spacing: 0.0.5em;
     color: #b6b6b6;
@@ -75,7 +69,144 @@
 }
 
 .horizontal-line {
-    margin: 0.5em auto;
+    margin-bottom: 0;
     border-color: #ededed;
     width: 80%;
+    display: block;
+}
+
+#promotion-heading {
+    letter-spacing: 0.0.1em;
+    color: #b6b6b6;
+    font-family: 'Proxima-LightWeight';
+}
+
+.promotion-container {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}
+
+/* For very small screens */
+@media screen and (min-width: 320px) {
+
+    .home-content-responsive {
+        height: 30%;
+        width: 70%;
+        margin: 3% auto;
+    }
+
+    .horizontal-line-responsive {
+        margin: 0 auto;
+        margin-top: 40%;
+    }
+
+    .search-box-responsive {
+        width: 76%;
+    }
+
+    .search-icon-container-responsive {
+        width: 24%;
+    }
+}
+
+@media screen and (min-width: 360px) {
+
+    .horizontal-line-responsive {
+        margin: 0 auto;
+        margin-top: 22%;
+    }
+
+}
+
+@media screen and (min-width: 480px) {
+
+    .home-content-responsive {
+        height: 38%;
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 3%;
+        margin-bottom: 1%;
+    }
+
+    .horizontal-line-responsive {
+        margin: 0 auto;
+        margin-top: 9%;
+    }
+}
+
+/* For mid-sized screens */
+@media screen and (min-width: 768px) {
+
+    .home-content-responsive {
+        height: 27%;
+        width: 70%;
+        margin: 3% auto;
+    }
+
+    .horizontal-line-responsive {
+        margin: 0 auto;
+        margin-top: 0%;
+    }
+
+    .search-box-responsive {
+        width: 85%;
+    }
+
+    .search-icon-container-responsive {
+        width: 15%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    .home-content-responsive {
+        height: 21%;
+        width: 70%;
+        margin: 3% auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .home-content-responsive {
+        height: 30%;
+        width: 50%;
+        margin: 2% auto;
+    }
+
+    .horizontal-line-responsive {
+        margin: 0 auto;
+        margin-top: 11%;
+    }
+
+    .search-box-responsive {
+        width: 92.6%;
+    }
+
+    .search-icon-container-responsive {
+        width: 7%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+
+    .horizontal-line-responsive {
+        margin: 0 auto;
+        margin-top: 8%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .home-content-responsive {
+        height: 18%;
+        width: 50%;
+        margin: 2% auto;
+    }
+
+    .horizontal-line-responsive {
+        margin: 0 auto;
+        margin-top: 7%;
+    }
 }
