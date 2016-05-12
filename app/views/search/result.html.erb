@@ -1,2 +1,22 @@
-<h1>Search#result</h1>
-<p>Find me in app/views/search/result.html.erb</p>
+<div class="result-page-search">
+    <div class="img_container">
+        <img src="assets/duckfake-2.png" style="display:inline-block">
+    </div>
+    <div class="search-wrapper-result">
+        <%= form_tag("/result", id: "search_form", method: "post") do %>
+            <%= text_field_tag :search_text, "", class: 'search-box search-box-responsive', :autocomplete => :off, value: @search_param %>
+            <div class="search-icon-container search-icon-container-responsive">
+                <i class="fa fa-2x fa-search search-icon" aria-hidden="true" onclick="document.getElementById('search_form').submit();"></i>
+            </div>
+        <% end %>
+    </div>
+    <hr class="horizontal-line-result"/>
+    <!-- API Documentation https://docs.omniref.com/ruby/gems/duck-duck-go/1.0.1/symbols/DuckDuckGo::DuckDuckGo::Link/by/singleton#line=25 -->
+    <% @hash = @search_results.related_topics %>
+    <% @hash.each do |key, array| %>
+        <% array.each do |x| %>
+            <a href="<%= x.first_url %>" target="_blank"><%= x.result[/(>\s*(.*?)\s*<)/,2] %></a><br/>
+             <%= x.text.sub!(x.result[/(>\s*(.*?)\s*<)/,2], "") %><br/>
+        <% end %>
+    <% end %>
+</div>

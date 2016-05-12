@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root 'search#home'
 
-  get 'search' => 'search#result', as: :search
+    #Application Home
+    root 'search#home'
+    #Search Result page
+    post 'result' => 'search#result'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
