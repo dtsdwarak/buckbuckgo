@@ -1,6 +1,6 @@
 <div class="result-page-search">
     <div class="img_container">
-        <img src="assets/duckfake-2.png" style="display:inline-block">
+        <a href="/"><img src="assets/duckfake-2.png" style="display:inline-block"></a>
     </div>
     <div class="search-wrapper-result">
         <%= form_tag("/result", id: "search_form", method: "post") do %>
@@ -10,13 +10,60 @@
             </div>
         <% end %>
     </div>
-    <hr class="horizontal-line-result"/>
-    <!-- API Documentation https://docs.omniref.com/ruby/gems/duck-duck-go/1.0.1/symbols/DuckDuckGo::DuckDuckGo::Link/by/singleton#line=25 -->
-    <% @hash = @search_results.related_topics %>
-    <% @hash.each do |key, array| %>
-        <% array.each do |x| %>
-            <a href="<%= x.first_url %>" target="_blank"><%= x.result[/(>\s*(.*?)\s*<)/,2] %></a><br/>
-             <%= x.text.sub!(x.result[/(>\s*(.*?)\s*<)/,2], "") %><br/>
-        <% end %>
-    <% end %>
 </div>
+<hr class="horizontal-line-result"/>
+<!-- API Documentation https://docs.omniref.com/ruby/gems/duck-duck-go/1.0.1/symbols/DuckDuckGo::DuckDuckGo::Link/by/singleton#line=25 -->
+<div class="search-results">
+    <div class="result" id="result">
+        <% @hash.each do |key, array| %>
+            <% array.each do |x| %>
+                <div class="result-body">
+                    <a href="<%= x.first_url %>" target="_blank" class="search-url"><%= x.result[/(>\s*(.*?)\s*<)/,2] %></a><br/>
+                    <%= x.text.sub!(x.result[/(>\s*(.*?)\s*<)/,2], "") %><br/>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+<img src="assets/ellipsis.svg" class="page-load-svg" style="display:none">
+
+<!-- For Page separator -->
+<div class="page-separator" id="page-separator">
+    <div class="page-separator-text">
+    </div>
+    <div class="page-separator-line">
+    </div>
+</div>
+
+<script type="text/JavaScript">
+
+var duplicateResultDivCount = 0;
+var original = document.getElementById("result");
+var horizontalLine = document.getElementById("page-separator");
+
+$(window).on('scroll', function(){
+    if( $(window).scrollTop() >= $(document).height() - $(window).height() ) {
+        $(".page-load-svg").fadeIn(3000, function(){
+            $(this).fadeOut(3000, resultFetch());
+        });
+    }
+}).scroll();
+
+function resultFetch() {
+    var horizontalLine = getHorizontalLine();
+    var cloneResult = original.cloneNode(true);
+    cloneResult.id = "result" + duplicateResultDivCount;
+    original.parentNode.appendChild(horizontalLine);
+    original.parentNode.appendChild(cloneResult);
+    console.log(cloneResult);
+}
+
+function getHorizontalLine() {
+    var clonedHorizontalLine = horizontalLine.cloneNode(true);
+    clonedHorizontalLine.id = "page-separator" + ++duplicateResultDivCount;
+    clonedHorizontalLine.style.display = "block";
+    clonedHorizontalLine.childNodes[1].innerText = "Page-" + (duplicateResultDivCount+1);
+    return clonedHorizontalLine;
+}
+
+</script>
