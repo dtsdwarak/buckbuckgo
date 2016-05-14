@@ -1,10 +1,12 @@
 .result-page-search {
     margin-top: 1%;
+    height: 10%;
 }
 
 .img_container {
-    width: 5%;
-    display: inline-block;
+    float: left;
+    padding-left: 0.75%;
+    padding-top: 0.5%;
 }
 
 .search-wrapper-result {
@@ -12,11 +14,14 @@
     border: 1px solid #d0d0d0;
     display: inline-block;
     width: 61%;
+    margin-left: 2%;
 }
 
 .horizontal-line-result {
     background-color: #b0b0b0;
     margin-top: 1%;
+    display: block;
+    z-index: 1;
 }
 
 .result {

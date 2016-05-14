@@ -1,5 +1,6 @@
 .home-content {
     text-align: center;
+    z-index: 1000;
 }
 
 .search-wrapper {
@@ -73,6 +74,7 @@
     border-color: #ededed;
     width: 80%;
     display: block;
+    z-index: 1;
 }
 
 #promotion-heading {

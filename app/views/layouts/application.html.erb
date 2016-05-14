@@ -10,5 +10,50 @@
 <body>
     <div class="header-bar"></div>
     <%= yield %>
+
+    <script type="text/JavaScript">
+
+    // For Ajax Request
+    var xhr;
+
+    $( document ).ready(function() {
+        $("#search_text").keyup(function () {
+            var value = $(this).val();
+            if (value.length > 0) {
+                xhr = $.ajax({
+                    type: "POST",
+                    url: "/ajax",
+                    data: {
+                        "search_text" : value
+                    },
+                    dataType: "text",
+                    success: function(response){
+                        $("#ajax-results").empty();
+                        $("#ajax-results").addClass("ajax-results-border");
+                        var ul = document.getElementById("ajax-results");
+                        array = JSON.parse(response);
+                        for(var i in array) {
+                            var li = document.createElement("li");
+                            li.innerHTML = array[i];
+                            ul.appendChild(li);
+                        }
+                    }
+                });
+            }
+            else {
+                $("#ajax-results").empty();
+                $("#ajax-results").removeClass("ajax-results-border");
+            }
+        });
+
+        $( "#search_form" ).submit(function( event ) {
+            xhr.abort();
+        });
+    });
+
+
+
+    </script>
+
 </body>
 </html>

@@ -1,6 +1,6 @@
 <div class="result-page-search">
     <div class="img_container">
-        <a href="/"><img src="assets/duckfake-2.png" style="display:inline-block"></a>
+        <a href="/"><img src="assets/duckfake-2.png"></a>
     </div>
     <div class="search-wrapper-result">
         <%= form_tag("/result", id: "search_form", method: "post") do %>
@@ -9,6 +9,10 @@
                 <i class="fa fa-2x fa-search search-icon" aria-hidden="true" onclick="document.getElementById('search_form').submit();"></i>
             </div>
         <% end %>
+        <div class="search-box-responsive ajax-results ajax-results-result">
+            <ul id="ajax-results">
+            </ul>
+        </div>
     </div>
 </div>
 <hr class="horizontal-line-result"/>
@@ -17,8 +21,8 @@
     <div class="result" id="result">
         <% @hash.each do |key, array| %>
             <% array.each do |x| %>
-                <div class="result-body">
-                    <a href="<%= x.first_url %>" target="_blank" class="search-url"><%= x.result[/(>\s*(.*?)\s*<)/,2] %></a><br/>
+                <div class="result-body" onclick="window.open('<%= x.first_url %>');">
+                    <a class="search-url"><%= x.result[/(>\s*(.*?)\s*<)/,2] %></a><br/>
                     <%= x.text.sub!(x.result[/(>\s*(.*?)\s*<)/,2], "") %><br/>
                 </div>
             <% end %>
@@ -65,5 +69,10 @@ function getHorizontalLine() {
     clonedHorizontalLine.childNodes[1].innerText = "Page-" + (duplicateResultDivCount+1);
     return clonedHorizontalLine;
 }
+
+// Prevent href links
+$("a.search-url").click(function(e){
+    e.preventDefault();
+});
 
 </script>

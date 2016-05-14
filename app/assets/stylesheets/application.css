@@ -87,3 +87,48 @@ body,input,select,textarea {
     width: 100%;
     z-index: 5;
 }
+
+.ajax-results {
+    background-color: #fff;
+    text-align: left;
+    display: block;
+    width: 93%;
+    position: relative;
+}
+
+.ajax-results-home {
+    margin-top: 7.3%;
+}
+
+.ajax-results-result {
+    margin-top: 6.1%;
+}
+
+.ajax-results-border {
+    border: 1px solid #d0d0d0;
+}
+
+.ajax-results ul{
+    padding: 0;
+    text-indent: 1em;
+    font-size: 1.15em;
+}
+
+.ajax-results li {
+    list-style-type: none;
+    padding: 0;
+}
+
+.ajax-results li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.ajax-results li:hover {
+    background-color: #d0d0d0;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #de5833;
+    font-weight: bold;
+}
