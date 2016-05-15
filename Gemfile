@@ -19,13 +19,24 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
+# JavaScript runtime
+gem 'therubyracer', '~> 0.12.2'
+
 # DuckDuckGo Instant Answers API
 gem 'duck-duck-go', '~> 1.1', '>= 1.1.3'
 # FontAwesome
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+end
+
+# Puma webserver
+gem 'puma'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
