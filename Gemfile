@@ -27,6 +27,9 @@ gem 'duck-duck-go', '~> 1.1', '>= 1.1.3'
 # FontAwesome
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
 
+# Support for Environment Variables
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+
 group :development do
     gem 'capistrano',         require: false
     gem 'capistrano-rvm',     require: false
