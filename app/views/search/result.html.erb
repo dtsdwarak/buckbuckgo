@@ -1,6 +1,6 @@
 <div class="result-page-search">
     <div class="img_container">
-        <a href="/"><img src="assets/duckfake-2.png"></a>
+        <a href="/"><%= image_tag "duckfake-2.png" %></a>
     </div>
     <div class="search-wrapper-result">
         <%= form_tag("/result", id: "search_form", method: "post") do %>
@@ -36,8 +36,7 @@
         <% end %>
     </div>
 </div>
-<img src="assets/ellipsis.svg" class="page-load-svg" style="display:none">
-
+<%= image_tag "ellipsis.svg", class: "page-load-svg", style: "display:none" %>
 <!-- For Page separator -->
 <div class="page-separator" id="page-separator">
     <div class="page-separator-text">
