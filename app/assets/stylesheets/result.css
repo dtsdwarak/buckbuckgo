@@ -17,6 +17,11 @@
     margin-left: 2%;
 }
 
+.error-msg {
+    color: red;
+    font-size: 1.25em;
+}
+
 .horizontal-line-result {
     background-color: #b0b0b0;
     margin-top: 1%;
@@ -38,6 +43,7 @@
 .search-url:hover {
     text-decoration: underline;
     color: #3a7fb4;
+    cursor: pointer;
 }
 
 .result-body {

@@ -19,12 +19,19 @@
 <!-- API Documentation https://docs.omniref.com/ruby/gems/duck-duck-go/1.0.1/symbols/DuckDuckGo::DuckDuckGo::Link/by/singleton#line=25 -->
 <div class="search-results">
     <div class="result" id="result">
-        <% @hash.each do |key, array| %>
-            <% array.each do |x| %>
-                <div class="result-body" onclick="window.open('<%= x.first_url %>');">
-                    <a class="search-url"><%= x.result[/(>\s*(.*?)\s*<)/,2] %></a><br/>
-                    <%= x.text.sub!(x.result[/(>\s*(.*?)\s*<)/,2], "") %><br/>
-                </div>
+        <% if !(@hash.empty?) %>
+            <% @hash.each do |key, array| %>
+                <% array.each do |x| %>
+                    <div class="result-body" onclick="window.open('<%= x.first_url %>');">
+                        <a class="search-url"><%= x.result[/(>\s*(.*?)\s*<)/,2] %></a><br/>
+                        <%= x.text.sub!(x.result[/(>\s*(.*?)\s*<)/,2], "") %><br/>
+                    </div>
+                <% end %>
+            <% end %>
+        <% else %>
+            <p class="error-msg">Oops. No result found. Did you mean any of the following?</p>
+            <% @exist_words.each do |correct_word| %>
+                <a class="search-url correct-word"><%= correct_word %></a>
             <% end %>
         <% end %>
     </div>
@@ -73,6 +80,11 @@ function getHorizontalLine() {
 // Prevent href links
 $("a.search-url").click(function(e){
     e.preventDefault();
+});
+
+$(".correct-word").click(function(e){
+    document.getElementById("search_text").value = $(this).text();
+    document.getElementById('search_form').submit();
 });
 
 </script>
