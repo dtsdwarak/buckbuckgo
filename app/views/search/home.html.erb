@@ -18,3 +18,12 @@
 <div class="promotion-container">
     <h1 id="promotion-heading">Try Search Pro</h1>
 </div>
+<div class="flash-message">
+    <%= flash[:notice] %>
+</div>
+
+<script type="text/JavaScript">
+    $(".flash-message").fadeIn(6000, function(){
+        $(this).fadeOut(6000);
+    });
+</script>

@@ -3,6 +3,12 @@
     z-index: 1000;
 }
 
+.flash-message {
+    font-size: 2em;
+    color: red;
+    text-align: center;
+}
+
 .search-wrapper {
     margin: 0 auto;
     width: 100%;

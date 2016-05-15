@@ -1,4 +1,7 @@
 class SearchController < ApplicationController
+
+  rescue_from SocketError, with: :api_error
+
   def home
   end
 
@@ -22,5 +25,12 @@ class SearchController < ApplicationController
         end
     end
     render :json => arr.first(7)
+  end
+
+  private
+
+  def api_error
+      flash[:notice] = "API Error. Try again from sometime."
+      redirect_to "/"
   end
 end
