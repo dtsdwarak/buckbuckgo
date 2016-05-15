@@ -3,8 +3,6 @@ class SearchController < ApplicationController
     rescue_from SocketError, with: :api_error
 
     def home
-        word_count = Word.where(word:'vere').first
-        puts word_count.count
     end
 
     def result
