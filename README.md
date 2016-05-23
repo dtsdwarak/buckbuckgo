@@ -7,6 +7,7 @@
 * Rails 4
 * NGINX
 * DuckDuckGo Instant Answers API
+* MySQL
 
 ## Dependencies
 * ```ruby 2.2```
@@ -30,6 +31,8 @@
 <br/>
 **Infinite Scroll** <br/>
 ![Infinite Scroll](screenshots/InfiniteScroll.png)
+**Did you Mean?** <br/>
+![Did you mean](screenshots/DidYouMean.png)
 <br/>
 **Mobile Home** <br/>
 ![Mobile Home](screenshots/mobile-home.png)
@@ -49,17 +52,22 @@ To deploy the application, make sure the parameters are properly set at
 Rest all has been taken care of with ```capistrano``` script.
 
 ```
-$ sudo apt-get install curl git-core nginx -y
+$ sudo apt-get install curl git-core nginx mysql-server -y
 $ git clone https://github.com/dtsdwarak/buckbuckgo.git && cd buckbuckgo
 $ bundle install
 $ cap production deploy
 ```
 
-After you deploy, you also need to populate values in the database for Spelling Corrector feature to work. Either migrate ```buckbuckgo.sql``` into the your database or run ```buckbuckgo-spell-corrector.rb```. Scripts available [here](spelling-corrector-deploy/)
+After you deploy, you also need to populate values in the database for Spelling Corrector feature to work. Either migrate ```buckbuckgo.sql``` into your database or run ```buckbuckgo-spell-corrector.rb```. Scripts available [here](spelling-corrector-deploy/)
+
+To run your code with production config,
+```
+$ RACK_ENV=production bundle exec puma -p 3000
+```
 
 ## Thanks
 
-* [Peter Norvig](http://norvig.com/spell-correct.html)
+[Peter Norvig](http://norvig.com/spell-correct.html) for the spelling corrector feature.
 
 ## License
 
